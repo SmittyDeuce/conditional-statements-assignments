@@ -138,7 +138,7 @@ leap_year(2015)
 
 # Task 2: Century Verification
 # Add functionality to your program from Task 1 to inform the user if the entered year is a century year (e.g., 1900, 2000) regardless of whether it's a leap year or not.
-def century_verificaitonZ(year):
+def century_verificaiton(year):
     if (year % 400 == 0):
         print(year, ' is a Leap Year and it is also a century year')
     elif (year % 100 == 0):
