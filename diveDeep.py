@@ -1,3 +1,4 @@
+from datetime import date
 # 1. Decisions at the Crossroad
 # Task 1: Code Correction
 # You are provided with a Python script that uses conditional statements to tell if a number is positive, negative, or zero, but it has some errors. Identify and fix them.
@@ -122,15 +123,15 @@
 # Dive deep into the intricacies of the calendar by exploring the concept of leap years.
 # Task 1: Leap Year Checker
 # Write a Python program that prompts the user to input a year. The program should determine if the given year is a leap year or not and then display an appropriate message.
-def leap_year(year):
-    if (year % 400 == 0):
-        print(year, ' is a Leap Year')
-    elif (year % 100 == 0):
-        print(year, ' is not a Leap Year')
-    elif (year % 4 == 0):
-        print(year, ' is a Leap Year')
+def leap_year(yr):
+    if (yr % 400 == 0):
+        print(yr, ' is a Leap Year')
+    elif (yr % 100 == 0):
+        print(yr, ' is not a Leap Year')
+    elif (yr % 4 == 0):
+        print(yr, ' is a Leap Year')
     else:
-        print(year, ' is not a Leap Year')
+        print(yr, ' is not a Leap Year')
 leap_year(2000)
 leap_year(2016)
 leap_year(1900)
@@ -138,19 +139,35 @@ leap_year(2015)
 
 # Task 2: Century Verification
 # Add functionality to your program from Task 1 to inform the user if the entered year is a century year (e.g., 1900, 2000) regardless of whether it's a leap year or not.
-def century_verificaiton(year):
-    if (year % 400 == 0):
-        print(year, ' is a Leap Year and it is also a century year')
-    elif (year % 100 == 0):
-        print(year, ' is not a Leap Year and it is also a century year')
-    elif (year % 4 == 0):
-        print(year, ' is a Leap Year')
+def century_verificaiton(yr):
+    if (yr % 400 == 0):
+        print(yr, ' is a Leap Year and it is also a century year')
+    elif (yr % 100 == 0):
+        print(yr, ' is not a Leap Year and it is also a century year')
+    elif (yr% 4 == 0):
+        print(yr, ' is a Leap Year')
     else:
-        print(year, ' is not a Leap Year')
+        print(yr, ' is not a Leap Year')
 century_verificaiton(2000)
 century_verificaiton(2016)
 century_verificaiton(1900)
 century_verificaiton(2015)
 
 # Task 3: Time Traveler
-# Enhance your program to indicate if the provided year is in the future, past, or is the current year, compared to the system's current year. You might find Python's datetime module helpful for this task.
+# Enhance your program to indicate if the provided year is in the future, past, or is the current year, compared to the system's current year. You might find Python's datetime module helpful for this task.\
+# current_year = date.today().year
+# print(current_year)
+def time_traveler(yr):
+    current_year = date.today().year
+    if (yr == current_year):
+        print(yr, 'is the current year')
+    elif (yr < current_year):
+        print(yr, ' is in the past')
+    elif (yr > current_year):
+        print(yr, 'is in the future')
+    return century_verificaiton(yr)
+
+time_traveler(2000)
+time_traveler(1900)
+time_traveler(4000)
+time_traveler(3999)
